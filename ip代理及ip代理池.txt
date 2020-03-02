@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar  2 18:59:43 2020
+
+@author: lyn
+"""
+
+import urllib.request
+
+ip = ""
+proxy = urllib.request.ProxyHandler({"http": ip})
+opener = urllib.request.build_opener(proxy, urllib.request.HTTPHandler)
+urllib.request.install_opener(opener)
+url = ""
+data = urllib.request.urlopen(url).read().decode("utf-8", "ignore")
+print(len(data))
